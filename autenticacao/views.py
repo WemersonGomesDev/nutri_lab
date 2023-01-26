@@ -49,7 +49,6 @@ def cadastro(request):
 
 def logar(request):
     if request.method == "GET":
-
         if request.user.is_authenticated:
             return redirect('/')
 
@@ -65,12 +64,11 @@ def logar(request):
             return redirect('/auth/logar')
         else:
             auth.login(request, usuario)
-            return redirect('/')
+            return redirect('/pacientes')
 
 def sair(request):
     auth.logout(request)
     return redirect('/auth/logar')
-
 
 def ativar_conta(request, token):
     token = get_object_or_404(Ativacao, token=token)
