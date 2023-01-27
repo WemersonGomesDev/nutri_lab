@@ -28,9 +28,9 @@ def pacientes(request):
             messages.add_message(request, constants.ERROR, 'Preencha todos os campos')
             return redirect('/pacientes/')
 
-        if not idade.isnumeric():
-            messages.add_message(request, constants.ERROR, 'Digite uma idade válida')
-            return redirect('/pacientes/')
+        # if not idade.isnumeric():
+        #     messages.add_message(request, constants.ERROR, 'Digite uma idade válida')
+        #     return redirect('/pacientes/')
 
         pacientes = Pacientes.objects.filter(email=email)
 

@@ -6,7 +6,7 @@ class Pacientes(models.Model):
                     ('M', 'Maculino'))
     nome = models.CharField(max_length=50)
     sexo = models.CharField(max_length=1, choices=choices_sexo)
-    idade = models.IntegerField()
+    idade = models.CharField(max_length=19)
     email = models.EmailField()
     telefone = models.CharField(max_length=19)
     nutri = models.ForeignKey(User, on_delete=models.CASCADE)
